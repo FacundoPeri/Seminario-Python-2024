@@ -2,6 +2,6 @@
 # luego convierta esa temperatura a grados Fahrenheit, mostrando el resultado.
 
 grCelsius = float(input('Ingrese una temperatura en grados celsius: '))
-print('La temperatura en celsius es ',grCelsius,'°')
+print(f'La temperatura en celsius es {grCelsius}°')
 grFarenheit = (grCelsius * 9/5) + 32
-print('El equivalente en farenheit es ', grFarenheit,'°')
+print(f'El equivalente en farenheit es {grFarenheit}°')
