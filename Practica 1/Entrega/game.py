@@ -8,9 +8,11 @@ secret_word = random.choice(words)
 
 # Número máximo de errores permitidos
 max_fails = 10
+fails = 0
 
 # Lista para almacenar las letras adivinadas
 guessed_letters = []
+
 
 print("¡Bienvenido al juego de adivinanzas!")
 print("""Seleccione una dificultad:
@@ -48,7 +50,7 @@ print("Estoy pensando en una palabra. ¿Puedes adivinar cuál es?")
 print(f"Palabra: {word_displayed}")
 
 
-while (max_fails > 0):
+while (fails < max_fails):
 
     # Pedir al jugador que ingrese una letra
     letter = input("Ingresa una letra: ").lower()
@@ -60,7 +62,6 @@ while (max_fails > 0):
     elif (letter == '') or (letter == ' '):
         # Verifica que la letra no sea un caracter vacio o un espacio.
         print("ERROR : No se ingreso ninguna letra.")
-        print(f"Palabra: {word_displayed}")
         continue
     else:
         # Agregar la letra a la lista de letras adivinadas
@@ -71,9 +72,7 @@ while (max_fails > 0):
        print("¡Bien hecho! La letra está en la palabra.")
     else: 
        print("Lo siento, la letra no está en la palabra.")
-       print(f"Palabra: {word_displayed}")
-       max_fails -= 1
-       continue
+       fails += 1
  
     letters = []
     # Mostrar la palabra parcialmente adivinada
